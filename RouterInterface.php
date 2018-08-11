@@ -2,6 +2,8 @@
 
 namespace Bulldog;
 
+use Psr\Http\Message\ServerRequestInterface;
+
 interface RouterInterface
 {
     public function addRoute($method, $uri, $callable);
@@ -14,5 +16,5 @@ interface RouterInterface
 
     public function put($uri, $callable);
 
-    public function run();
+    public function run(ServerRequestInterface $request);
 }
